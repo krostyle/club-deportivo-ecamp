@@ -24,7 +24,7 @@ const getSports = async(req = request, res = response) => {
 }
 
 const createSport = async(req = request, res = response) => {
-    const { nombre, precio } = req.query;
+    const { nombre, precio } = req.body;
     const { deportes } = readDB();
     const newSport = {
         nombre,
@@ -36,7 +36,7 @@ const createSport = async(req = request, res = response) => {
 }
 
 const updateSport = async(req = request, res = response) => {
-    const { nombre, precio } = req.query;
+    const { nombre, precio } = req.body;
     const { deportes } = readDB();
     const deportesUpdate = deportes.map((deporte) => {
         if (deporte.nombre === nombre) {
@@ -54,7 +54,7 @@ const updateSport = async(req = request, res = response) => {
 //     })
 // }
 
-const deleteSport = (req = request, res = response) => {
+const deleteSport = async(req = request, res = response) => {
     const { nombre, precio } = req.query;
     const { deportes } = readDB();
     const deportesDelete = deportes.filter((deporte) => {

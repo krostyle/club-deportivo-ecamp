@@ -5,13 +5,13 @@ const router = Router();
 
 router.get('/deportes', getSports)
 
-router.get('/agregar', createSport)
+router.post('/agregar', createSport)
 
-router.get('/editar', updateSport)
+router.put('/editar', updateSport)
 
 // router.patch('/', patchUsers)
 
-router.get('/eliminar', deleteSport)
+router.delete('/eliminar', deleteSport)
 
 
 
